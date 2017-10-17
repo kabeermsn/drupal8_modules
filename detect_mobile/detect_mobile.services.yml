@@ -1,0 +1,16 @@
+services:
+  mobile_detect:
+    class: Drupal\detect_mobile\Detect\MobileDetect
+
+  mobile_detect.twig.extension:
+    class: Drupal\detect_mobile\Twig\MobileDetectExtension
+    arguments: ["@mobile_detect"]
+    tags:
+      - { name: twig.extension }
+
+  cache_context.mobile_detect:
+    class: Drupal\detect_mobile\CacheContext\MobileCacheDetect
+    arguments: ['@mobile_detect']
+    tags:
+      - { name: cache.context }
+

@@ -1,0 +1,5 @@
+services:
+  twig_render_blocks.twig.render_block:
+    class: Drupal\twig_render_blocks\Twig\RenderBlock
+    tags:
+      - { name: twig.extension }

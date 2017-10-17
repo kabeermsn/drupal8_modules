@@ -1,0 +1,23 @@
+.paragraph-type-top {
+  width: 100%;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: #bfbfba;
+}
+.paragraph-type-top .paragraph-type-title{
+  font-weight: bold;
+  font-size: 18px;
+}
+td .paragraph-type-top {
+  font-weight: normal;
+  font-size: 12px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 0;
+  background-color: #fff;
+}
+td .paragraph-type-top .paragraph-type-title{
+  font-weight: normal;
+  font-size: 12px;
+}

@@ -1,0 +1,5 @@
+name: Twig Render Blocks
+description: 'Provides the ability to render a block in twig.'
+type: module
+core: '8.x'
+project: 'twig_blocks'

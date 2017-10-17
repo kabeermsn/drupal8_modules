@@ -1,0 +1,5 @@
+name: fourspots content ordering
+type: module
+description: Module to order list of contents for each content type
+core: 8.x
+package: icc001

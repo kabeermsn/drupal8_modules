@@ -1,0 +1,5 @@
+admin_style_changes:
+  footer: true
+  css:
+    layout:
+      assets/css/admin_theme_changes.css: {}

@@ -1,0 +1,14 @@
+fourspots_content_ordering.node_order_form:
+  title: 'NodeOrderForm'
+  route_name: fourspots_content_ordering.node_order_form
+  description: 'Menu to order list of content for content type'
+  parent: fourspots_content_ordering.list_node_bundles
+  weight: 99
+
+fourspots_content_ordering.list_node_bundles:
+  title: 'ListNodeBundles'
+  route_name: fourspots_content_ordering.list_node_bundles
+  description: 'List all bundle type for Entity Node'
+  parent: system.admin_config_system
+  weight: 99
+

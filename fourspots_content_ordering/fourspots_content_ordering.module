@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Contains fourspots_content_ordering.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_form_formId_alter
+ * @author kabeer.M <kabeer@4spots.com>
+ * @param  [type] &$form      [description]
+ * @param  [type] $form_state [description]
+ * @param  [type] $form_id    [description]
+ * @return [type]             [description]
+ */
+function fourspots_content_ordering_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $form['#attached']['library'][] = 'fourspots_content_ordering/admin_style_changes';
+  $nid = $form_state->getFormObject()->getEntity()->nid->value;
+  if($nid) $submitName = 'fourspots_content_ordering_edit_node_form_submit';
+  else $submitName = 'fourspots_content_ordering_add_node_form_submit';
+
+  foreach (array_keys($form['actions']) as $action) {
+    if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+      $form['actions'][$action]['#submit'][] = $submitName;
+    }
+  }
+
+}
+
+function fourspots_content_ordering_add_node_form_submit($form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  global $base_url;
+  $node = $form_state->getFormObject()->getEntity();
+  $type = $node->getType();
+  $url = \Drupal\Core\Url::fromRoute('node.add', array('node_type' => $type));
+  $form_state->setRedirectUrl($url);
+  return;
+}
+
+function fourspots_content_ordering_edit_node_form_submit($form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  /*global $base_url;
+  $node = $form_state->getFormObject()->getEntity();
+  $type = $node->getType();
+  $uri = $base_url."/admin/content/";
+  $option = [
+    'query' => ['type' => $type],
+  ];
+  drupal_set_message($uri);
+  $url = \Drupal\Core\Url::fromUri($uri, $option);
+  $form_state->setRedirectUrl($url);
+  return;*/
+}

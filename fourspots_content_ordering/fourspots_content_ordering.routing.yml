@@ -1,0 +1,23 @@
+
+fourspots_content_ordering.node_order_form:
+  path: '/admin/config/fourspots_content_ordering/listnodebundles/nodeorder/{nodeType}'
+  defaults:
+    _form: '\Drupal\fourspots_content_ordering\Form\NodeOrderForm'
+    _title: 'NodeOrderForm'
+    nodeType: 'test'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+
+fourspots_content_ordering.list_node_bundles:
+  path: '/admin/config/fourspots_content_ordering/listnodebundles'
+  defaults:
+    _form: '\Drupal\fourspots_content_ordering\Form\ListNodeBundles'
+    _title: 'ListNodeBundles'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
